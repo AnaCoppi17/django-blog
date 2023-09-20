@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title>Meu Blog</title>
+</head>
+
+<body>
+    <main class="main-posts">
+        <h2>Bem vindo ao Blog</h2>
+        <a href="{% url 'index' %}">Django</a>
+    </main>
+    <section class="container-posts">
+        <a href="{% url 'post_add' %}" class="btn btn-lg btn-primary font-weight-bold">
+            + Post
+        </a>
+        {% for post in posts_list %}
+        <article class="article-posts">
+            <h2>Em: {{ post.pub_date|date:"d / m / Y" }}</h2>
+            <p>{{ post.body_text }}</p>
+        </article>
+        {% endfor %}
+    </section>
+</body>
+
+</html>

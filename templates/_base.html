@@ -5,29 +5,22 @@
 <head>
     <meta charset="utf-8">
     <title>
-        {% block head_title %}
-        <!-- bloco de título -->
-        {% endblock %} 
+        {% block head_title %}{% endblock %} <!-- bloco de título -->
     </title>
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
-
     {% block css %} <!-- bloco de CSS -->
     {% endblock %}
-    
 </head>
 
 <body>
     {% block header %} <!-- bloco de cabeçalho -->
     {% endblock %}
-
     {% block main %} <!-- bloco principal do body -->
-        {% block content %} <!-- bloco de conteúdo -->
-        {% endblock %}
+    {% block content %} <!-- bloco de conteúdo -->
     {% endblock %}
-
+    {% endblock %}
     {% block footer %} <!-- bloco de rodapé -->
     {% endblock %}
-    
     {% block javascript %} <!-- bloco extra abaixo do body -->
     {% endblock %}
 </body>
